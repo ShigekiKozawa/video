@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>動画あれこれ</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+	<script type="text/javascript" src="./js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+	<h1>動画あれこれ</h1>
+	<section>
+		<h2>動画の終わりにコンテンツ表示</h2>
+		<div class="video__cont" id="end">
+			<video v-bind:src="video" id="video-end" v-on:ended="vEnd"></video>
+			<div class="btn__cont">
+		    	<p v-on:click="vPlay" class="btn">再生・一時停止</p>
+			</div>
+			<div class="end__cont">
+				<p class="end__ttl">シェアしませんか</p>
+				<div class="sns__cont">
+					<p class="sns__btn -tw"><a href="//twitter.com/torakkusu">Twitter</a></p>
+					<p class="sns__btn -fb"><a href="//www.facebook.com/UDTrucksJP/">Facebook</a></p>
+					<p class="sns__btn -insta"><a href="//www.instagram.com/udtrucksjp/?hl=ja">Instagram</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2>次の動画に移動するボタン追加</h2>
+		<div class="video__cont" id="control">
+			<video v-bind:src="video" v-on:ended="onNext" id="video-control"></video>
+			<div class="btn__cont">
+		    	<p v-on:click="vPlay" class="btn">再生・一時停止</p>
+				<p v-on:click="onNext" class="btn">次の動画</p>
+			</div>
+		</div>
+	</section>
+	<section>
+		<h2>動画が半分以上で再生または一時停止でコンテンツ表示</h2>
+		<div class="video__cont" id="interactive">
+			<video v-bind:src="video" id="video-interactive"></video>
+			<div class="btn__cont">
+		    	<p v-on:click="vPlay" class="btn">再生・一時停止</p>
+			</div>
+			<div class="end__cont">
+				<p class="end__ttl">シェアしませんか</p>
+				<div class="sns__cont">
+					<p class="sns__btn -tw"><a href="//twitter.com/torakkusu">Twitter</a></p>
+					<p class="sns__btn -fb"><a href="//www.facebook.com/UDTrucksJP/">Facebook</a></p>
+					<p class="sns__btn -insta"><a href="//www.instagram.com/udtrucksjp/?hl=ja">Instagram</a></p>
+				</div>
+				<div class="sns__cont">
+					<p class="sns__btn -no">
+						<a href="javascript:void(0)" v-on:click="vContinue">シェアしない</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+	<script src="./js/vue.js"></script>
+</body>
+</html>
